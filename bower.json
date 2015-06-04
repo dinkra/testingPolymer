@@ -1,0 +1,18 @@
+{
+  "name": "02_StudyPolymer",
+  "version": "0.0.0",
+  "authors": [
+    "dinkra <dinarochka@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "iron-elements": "PolymerElements/iron-elements#~1.0.0"
+  }
+}

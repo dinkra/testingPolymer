@@ -1,0 +1,32 @@
+<link rel="import"
+      href="//www.polymer-project.org/1.0/samples/components/polymer/polymer.html">
+
+<dom-module id="test-element">
+  <template>
+    <li>
+    	<p>{{title}}</p>
+    	<button>edit</button>
+    	<button>done</button>
+    	<button>delete</button>
+    </li>>
+  </template>
+</dom-module>
+
+<script>
+  Polymer({
+
+  	is: 'test-element',
+
+  	properties: {
+	    title: String,
+	    isHappy: Boolean,
+	    count: {
+	      type: Number,
+	      readOnly: true,
+	      notify: true
+	    }
+  	}
+  	
+
+  });
+</script>
