@@ -1,14 +1,25 @@
 <link rel="import"
-      href="//www.polymer-project.org/1.0/samples/components/polymer/polymer.html">
+      href="bower_components/polymer/polymer.html">
+<link rel="import" href="bower_components/iron-icons/iron-icons.html">
 
 <dom-module id="test-element">
+  <style>   
+
+    .test {
+      /* layout properties for a local DOM element */
+      display: inline-block;
+    }
+  </style>
   <template>
-    <li>
-    	<p>{{title}}</p>
-    	<button>edit</button>
-    	<button>done</button>
-    	<button>delete</button>
-    </li>>
+  	<p>Todo list:</p>
+  	<template is="dom-repeat" items="{{items}}">
+	    <li completed>
+	    	<p class='test'>{{item.title}}</p>
+	    	<button class='test' id="edit" on-click="editTask"><iron-icon icon="create"></iron-icon></button>
+	      	<button class='test' id="done" on-click="doneTask"><iron-icon icon="done"></iron-icon></button>
+	      	<button class='test' id="delete" on-click="deleteTask"><iron-icon icon="delete"></iron-icon></button>
+	    </li>
+    </template>
   </template>
 </dom-module>
 
@@ -18,15 +29,62 @@
   	is: 'test-element',
 
   	properties: {
-	    title: String,
-	    isHappy: Boolean,
-	    count: {
-	      type: Number,
-	      readOnly: true,
-	      notify: true
-	    }
-  	}
+	    items: {
+	      title: String,
+	      completed: Boolean
+    	}
+  	},
+
+  	// ready: function() {
+	  //   this.items = [ 
+	  //     	{ title: 'Task text text 1', completed: true },
+			// { title: 'Task text text 2', completed: false }
+   //  	]
+  	// },
+
+  	// listeners: {
+   //  //  'edit.tap': 'editTask',
+   //    'done.tap': 'doneTask'
+   //  },
+
+   // //  editTask: function(e) {},
+   editTask: function() {
+   		console.log('Edit');
+   },
+
+   doneTask: function() {
+   		console.log('Done');
+   },
+
+   deleteTask: function() {
+   		console.log('Delete');
+   }
+
+   //  completeTask: function() {},
+
   	
 
   });
 </script>
+
+
+
+
+ <!-- <form onsubmit="">
+	    <input name="input" id="newTask">
+	    <button type="submit" id="add_button">Add</button>
+    </form>
+	<ul></ul>
+
+	
+
+	<test-element id="a"></test-element> -->
+
+<!-- 	<template id='a' is="dom-repeat" items="{{items}}">
+	<paper-item>
+			<paper-checkbox checked> </paper-checkbox>
+			<p>{{item.title}}</p>
+	</paper-item>
+	</template>
+ -->
+	

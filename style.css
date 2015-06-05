@@ -1,0 +1,12 @@
+body {
+  width: 600px;
+  margin: 0 auto; 
+  font-family: 'myriad pro', sans-serif;
+  font-size: 20px;
+  border: 0;
+}
+
+paper-button {
+    background: #3f51b5;
+    color: white;
+}
