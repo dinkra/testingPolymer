@@ -3,6 +3,8 @@
   <head>
   	<link rel="stylesheet" href="style.css">
 
+  	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+
     <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
     <link rel="import" href="bower_components/polymer/polymer.html">
 
@@ -10,11 +12,12 @@
     <link rel="import" href="bower_components/iron-icon/iron-icon.html">
     <link rel="import" href="bower_components/iron-meta/iron-meta.html">
     <link rel="import" href="bower_components/paper-button/paper-button.html">
+    <link rel="import" href="bower_components/paper-header-panel/paper-header-panel.html">
     <link rel="import" href="bower_components/paper-checkbox/paper-checkbox.html">
     <link rel="import" href="bower_components/paper-item/paper-item.html">
     <link rel="import" href="bower_components/paper-ripple/paper-ripple.html">
     <link rel="import" href="bower_components/paper-input/paper-textarea.html">
-    <link rel="import" href="bower_components/paper-button/paper-button.html">
+    <link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html">
     <!-- <link rel="import" href="hello-element.html"> -->
     <link rel="import" href="test-element.html">
     <!-- <link rel="import" href="friend-list.html"> -->
@@ -25,18 +28,260 @@
 	<link rel="import" href="bower_components/paper-styles/paper-styles.html">
 	<link rel="import" href="bower_components/paper-styles/demo-pages.html">
 
+	<link rel="import" href="bower_components/google-chart/google-chart.html">
+
+	
+
+	<link rel="import" href="bower_components/paper-styles/paper-styles-classes.html">
+
+	<style is="custom-style">
+      body {
+        padding: 0px;
+      }
+
+      paper-header-panel {
+        float: left;
+        width: 100%;
+        height: 500px;
+        xmargin: 0px;
+        @apply(--shadow-elevation-2dp);
+      }
+
+      .paper-header {
+        height: 60px;
+        font-size: 16px;
+        line-height: 60px;
+        padding: 0 10px;
+        color: white;
+        xtransition: height 0.2s;
+      }
+
+      .xpaper-header.tall {
+        xheight: 120px;
+      }
+
+      .xpaper-header.medium-tall {
+        height: 100px;
+        line-height: 50px;
+      }
+
+      .content {
+        height: 2000px;
+        padding: 15px;
+      }
+
+      .xcover {
+        margin: 60px;
+      }
+
+      .blue .paper-header {
+        background-color: var(--paper-light-blue-500);
+      }
+      .red .paper-header {
+        background-color: var(--paper-red-500);
+      }
+      .orange .paper-header {
+        background-color: var(--paper-amber-500);
+      }
+      .green .paper-header {
+        background-color: var(--paper-green-500);
+      }
+      .cyan .paper-header {
+        background-color: var(--paper-cyan-500);
+      }
+      .lime .paper-header {
+        background-color: var(--paper-lime-500);
+      }
+      .pink .paper-header {
+        background-color: var(--paper-pink-a200);
+      }
+
+      /* TODO: replace these with background: linear-gradient(white, var(...))
+       when custom properties allow it */
+
+      .blue .content {
+      	background: white;
+        xbackground: linear-gradient(white, #b3e5fc);
+      }
+      .red .content {
+        background: linear-gradient(white, #ffcdd2);
+      }
+      .orange .content {
+        background: linear-gradient(white, #ffecb3);
+      }
+      .green .content {
+        background: linear-gradient(white, #c8e6c9);
+      }
+      .cyan .content {
+        background: linear-gradient(white, #b2ebf2);
+      }
+      .lime .content {
+        background: linear-gradient(white, #f0f4c3);
+      }
+      .pink .content {
+        background: linear-gradient(white, #f8bbd0);
+      }
+
+
+
+      .horizontal-section {
+      min-width: 130px;
+    }
+
+    paper-button {
+      display: block;
+      margin-bottom: 24px;
+    }
+
+    xpaper-button.colorful {
+      color: #4285f4;
+    }
+
+    paper-button[raised].colorful {
+      background: var(--paper-light-blue-500);
+      xbackground: #4285f4;
+      color: #fff;
+    }
+
+    paper-button[toggles] {
+      transition: background-color 0.3s;
+    }
+
+    paper-button[toggles][active] {
+      background-color: rgba(0, 0, 0, 0.25);
+    }
+
+    paper-button[toggles][active].colorful {
+      background-color: rgba(66, 133, 244, 0.25);
+    }
+
+    paper-button[toggles][active][raised].colorful {
+      background-color: rgba(66, 133, 244, 0.75);
+    }
+
+    paper-button.blue {
+      color: var(--paper-light-blue-500);
+      --paper-button-flat-focus-color: var(--paper-light-blue-500);
+    }
+    paper-button.blue:hover {
+      background: var(--paper-blue-500);
+    }
+    paper-button.red {
+      color: var(--paper-red-500);
+      --paper-button-flat-focus-color: var(--paper-red-50);
+    }
+    paper-button.red:hover {
+      background: var(--paper-red-50);
+    }
+    paper-button.green {
+      color: var(--paper-green-500);
+      --paper-button-flat-focus-color: var(--paper-green-50);
+    }
+    paper-button.green:hover {
+      background: var(--paper-green-50);
+    }
+    paper-button.orange {
+      color: var(--paper-orange-500);
+      --paper-button-flat-focus-color: var(--paper-orange-50);
+    }
+    paper-button.orange:hover {
+      background: var(--paper-orange-50);
+    }
+
+    paper-button.hover:hover {
+      background: #eee;
+    }
+
+    paper-button.ripple::shadow paper-ripple {
+      color: var(--paper-pink-a200);
+    }
+
+    paper-button.ripple paper-ripple {
+      color: var(--paper-pink-a200);
+    }
+
+
+	  paper-icon-button {
+        margin-left: 10px;
+        display: block;
+        width: 24px;
+        text-align: center;
+      }
+
+      paper-icon-button.blue {
+        color: var(--paper-light-blue-500);
+      }
+
+      paper-icon-button.red {
+        color: var(--paper-red-500);
+      }
+
+      paper-icon-button.orange {
+        color: var(--paper-orange-500);
+      }
+
+      paper-icon-button.green {
+        color: var(--paper-green-500);
+      }
+
+      paper-icon-button.blue:hover {
+        background: var(--paper-light-blue-50);
+        border-radius: 50%;
+      }
+
+      paper-icon-button.red:hover {
+        background: var(--paper-red-50);
+        border-radius: 50%;
+      }
+
+      paper-icon-button.orange:hover {
+        background: var(--paper-orange-50);
+        border-radius: 50%;
+      }
+
+      paper-icon-button.green:hover {
+        background: var(--paper-green-50);
+        border-radius: 50%;
+      }
+
+      paper-icon-button.huge {
+        margin-left: 0px;
+        width: 100px;
+        --paper-icon-button-ink-color: var(--paper-indigo-500);
+      }
+
+      paper-icon-button.huge::shadow #icon {
+        width: 100px;
+        height: 100px;
+      }
+
+      paper-icon-button.huge #icon {
+        width: 100px;
+        height: 100px;
+      }
+
+      paper-textarea {
+      	--paper-input-container-focus-color: var(--paper-light-blue-500);
+      }
+
+	paper-checkbox {
+      --paper-checkbox-checked-color: var(--paper-light-blue-500);
+	}
+
+    </style>
 
 
   </head>
   <body>
-	
-   
+
+	<paper-header-panel class="blue">
+        <div class="paper-header">Todo List</div>
+        <div id="main" class="content">
 		<paper-textarea label="Type new item"></paper-textarea>
-    	<paper-button raised noink id="add-button" on-tap="{{addTask()}}">Add item</paper-button>
+		<paper-button tabindex="0" raised class="colorful blue" onclick="addTask()">Add Item</paper-button>
     	<div id="list">
     	<span id="subList"></span>
 
-		<h4>Todo list</h4>
 		<div class="list short">
 
 		<template id='a' is="dom-bind">
@@ -45,16 +290,30 @@
 			<template  is="dom-repeat" items="{{items}}">
 				<paper-icon-item>
 					<paper-checkbox item-icon checked="{{item.completed}}"></paper-checkbox>
-					<div class="flex">{{item.title}}</div>
-					<paper-icon-button icon="create" style="color: #3f51b5;"></paper-icon-button>
-			      	<paper-icon-button icon="delete" style="color: #3f51b5;"></paper-icon-button>
+					<div class="flex" class="item-title" data-item-index$="{{index}}">{{item.title}}</div>
+					<form data-item-index$="{{index}}" onsubmit="return saveTask(event)">
+						<input class="item-edit" data-item-index$="{{index}}"/>
+					</form>
+					<paper-icon-button icon="create" class="orange" data-item-index$="{{index}}" onclick="editTask(event)"></paper-icon-button>
+			      	<paper-icon-button icon="delete" class="red" data-item-index$="{{index}}" onclick="deleteTask(event)"></paper-icon-button>
+			      	<paper-icon-button icon="done" class="blue" data-item-index$="{{index}}" onclick="saveTask(event)" style="display: none;"></paper-icon-button>
 		    	</paper-icon-item>
 			</template>
 
 		</template>
 
 		</div>
-    
+    </div>
+    </paper-header-panel>
+
+    <!-- <google-chart
+	  type='area'
+	  options='{"title": "Distribution of days in 2001Q1"}'
+	  cols='[{"label":"Month", "type":"string"}, {"label":"Days", "type":"number"}]'
+	  rows='[["Jan", 31],["Feb", 28],["Mar", 31]]'>
+	</google-chart> -->
+	
+   	
 
 	<script>
 		var items = [
@@ -69,13 +328,76 @@
 		el.items = items;
 
 		function addTask() {
-			console.log('work');
 			var val = $("paper-textarea").val();
-			console.log(work);
 			if (val) {
 				$("paper-textarea").val('');
-				items.push({ title: val, completed: false });
+				el.push("items", { title: val, completed: false });
 			};
+
+			return false;
+		}
+
+		function deleteTask(e) {
+			var pp = this.items.title;
+			console.log(pp);
+			var i = e.target.parentElement.getAttribute("data-item-index");
+			el.splice("items", parseInt(i), 1);
+
+			return false;
+
+		}
+
+		function editTask(e) {			
+			console.log("work");
+			//el.set();
+			var i = e.target.parentElement.getAttribute("data-item-index");
+			i = parseInt(i);
+			console.log(".item-title" + i);
+
+			var input = document.querySelector("input[data-item-index='" + i + "']");
+			input.style.display = 'block';
+
+			// var okBut = document.querySelector(".blue[data-item-index='" + i + "']");
+			// okBut.style.display = 'block';
+
+			var div = document.querySelector("div[data-item-index='" + i + "']");
+			div.style.display = 'none';
+
+			// var editBut = document.querySelector(".orange[data-item-index='" + i + "']");
+			// editBut.style.display = 'none';
+
+			// var deleteBut = document.querySelector(".red[data-item-index='" + i + "']");
+			// deleteBut.style.display = 'none';
+
+			// var deleteBut = document.querySelector("div[data-item-index='" + i + "']");
+			// div.style.display = 'none';
+
+			// div.innerHTML = "text";
+
+
+			//$(".item-title" + i).hide();
+			//$('.edit_input').show();
+
+			// $('ul').on('click', '.edit_button', function() {
+		 //        saveTitle(i);
+		 //    });
+
+			//return false;
+		}
+
+		function saveTask(e) {
+			var i = e.target.getAttribute("data-item-index");
+			i = parseInt(i);
+			console.log(".item-title" + i);
+
+			var input = document.querySelector("input[data-item-index='" + i + "']");
+			var val = input.value;
+			input.style.display = 'none';
+
+			var div = document.querySelector("div[data-item-index='" + i + "']");
+			div.textContent = val;
+			div.style.display = 'block';
+			
 			return false;
 		}
 	</script>

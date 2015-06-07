@@ -1,25 +1,22 @@
 body {
-  width: 600px;
-  margin: 0 auto; 
-  font-family: 'myriad pro', sans-serif;
-  font-size: 20px;
-  border: 0;
+  
+  xfont-family: 'myriad pro', sans-serif;
+  xfont-size: 20px;
+  padding: 0px;
+  margin: 0px;
 }
 
-#add-button {
-    background: #3f51b5;
-    color: white;
+
+#main {
+	width: 600px;
+	margin: 0 auto; 
 }
 
-.test {
-      /* layout properties for a local DOM element */
-      display: inline-block;
+.item-edit {
+	display: none;
 }
 
-.icons {
-	
+paper-button {
+	display: none;
 }
 
- .paper-checkbox {
-	--paper-checkbox-checked-color: green;
-}
