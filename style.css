@@ -12,6 +12,7 @@ body {
 	margin: 0 auto;
 	padding-top: 70px;
 	background-color: white; 
+
 }
 
 .item-edit {
@@ -21,4 +22,6 @@ body {
 paper-button {
 	display: none;
 }
+
+
 
