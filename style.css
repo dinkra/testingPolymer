@@ -9,14 +9,8 @@ body {
 
 #main {
 	max-width: 600px;
-	margin: 0 auto; 
-}
+	margin: 0 auto;
+	padding-top: 70px;
+	background-color: white; 
 
-.item-edit {
-	display: none;
 }
-
-paper-button {
-	display: none;
-}
-
