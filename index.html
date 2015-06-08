@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-  	<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 
-  	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 
     <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
     <link rel="import" href="bower_components/polymer/polymer.html">
@@ -20,107 +20,108 @@
     <link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html">
     <!-- <link rel="import" href="hello-element.html"> -->
     <link rel="import" href="test-element.html">
+    <link rel="import" href="tasks-item.html">
     <!-- <link rel="import" href="friend-list.html"> -->
-	<link rel="import" href="bower_components/iron-icons/communication-icons.html">
-	<link rel="import" href="bower_components/paper-toggle-button/paper-toggle-button.html">
-	<link rel="import" href="bower_components/paper-item/paper-icon-item.html">
-	<link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
-	<link rel="import" href="bower_components/paper-styles/paper-styles.html">
-	<link rel="import" href="bower_components/paper-styles/demo-pages.html">
+  <link rel="import" href="bower_components/iron-icons/communication-icons.html">
+  <link rel="import" href="bower_components/paper-toggle-button/paper-toggle-button.html">
+  <link rel="import" href="bower_components/paper-item/paper-icon-item.html">
+  <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
+  <link rel="import" href="bower_components/paper-styles/paper-styles.html">
+  <link rel="import" href="bower_components/paper-styles/demo-pages.html">
 
-	<link rel="import" href="bower_components/google-chart/google-chart.html">
+  <link rel="import" href="bower_components/google-chart/google-chart.html">
 
-	
+  
 
-	<link rel="import" href="bower_components/paper-styles/paper-styles-classes.html">
+  <link rel="import" href="bower_components/paper-styles/paper-styles-classes.html">
 
-	<style is="custom-style">
-      body {
-        padding: 0px;
-      }
+  <style is="custom-style">
+    body {
+      padding: 0px;
+    }
 
-      paper-header-panel {
-        float: left;
-        width: 100%;
-        height: 500px;
-        xmargin: 0px;
-        @apply(--shadow-elevation-2dp);
-      }
+    paper-header-panel {
+      float: left;
+      width: 100%;
+      xheight: 500px;
+      xmargin: 0px;
+      @apply(--shadow-elevation-2dp);
+    }
 
-      .paper-header {
-        height: 60px;
-        font-size: 16px;
-        line-height: 60px;
-        padding: 0 10px;
-        color: white;
-        xtransition: height 0.2s;
-      }
+    .paper-header {
+      height: 60px;
+      font-size: 16px;
+      line-height: 60px;
+      padding: 0 10px;
+      color: white;
+      xtransition: height 0.2s;
+    }
 
-      .xpaper-header.tall {
-        xheight: 120px;
-      }
+    .xpaper-header.tall {
+      xheight: 120px;
+    }
 
-      .xpaper-header.medium-tall {
-        height: 100px;
-        line-height: 50px;
-      }
+    .xpaper-header.medium-tall {
+      height: 100px;
+      line-height: 50px;
+    }
 
-      .content {
-        height: 2000px;
-        padding: 15px;
-      }
+    .content {
+      xheight: 2000px;
+      padding: 15px;
+    }
 
-      .xcover {
-        margin: 60px;
-      }
+    .xcover {
+      margin: 60px;
+    }
 
-      .blue .paper-header {
-        background-color: var(--paper-light-blue-500);
-      }
-      .red .paper-header {
-        background-color: var(--paper-red-500);
-      }
-      .orange .paper-header {
-        background-color: var(--paper-amber-500);
-      }
-      .green .paper-header {
-        background-color: var(--paper-green-500);
-      }
-      .cyan .paper-header {
-        background-color: var(--paper-cyan-500);
-      }
-      .lime .paper-header {
-        background-color: var(--paper-lime-500);
-      }
-      .pink .paper-header {
-        background-color: var(--paper-pink-a200);
-      }
+    .blue .paper-header {
+      background-color: var(--paper-light-blue-500);
+    }
+    .red .paper-header {
+      background-color: var(--paper-red-500);
+    }
+    .orange .paper-header {
+      background-color: var(--paper-amber-500);
+    }
+    .green .paper-header {
+      background-color: var(--paper-green-500);
+    }
+    .cyan .paper-header {
+      background-color: var(--paper-cyan-500);
+    }
+    .lime .paper-header {
+      background-color: var(--paper-lime-500);
+    }
+    .pink .paper-header {
+      background-color: var(--paper-pink-a200);
+    }
 
-      /* TODO: replace these with background: linear-gradient(white, var(...))
-       when custom properties allow it */
+    /* TODO: replace these with background: linear-gradient(white, var(...))
+     when custom properties allow it */
 
-      .blue .content {
-      	background: white;
-        xbackground: linear-gradient(white, #b3e5fc);
-      }
-      .red .content {
-        background: linear-gradient(white, #ffcdd2);
-      }
-      .orange .content {
-        background: linear-gradient(white, #ffecb3);
-      }
-      .green .content {
-        background: linear-gradient(white, #c8e6c9);
-      }
-      .cyan .content {
-        background: linear-gradient(white, #b2ebf2);
-      }
-      .lime .content {
-        background: linear-gradient(white, #f0f4c3);
-      }
-      .pink .content {
-        background: linear-gradient(white, #f8bbd0);
-      }
+    .blue .content {
+      background: white;
+      xbackground: linear-gradient(white, #b3e5fc);
+    }
+    .red .content {
+      background: linear-gradient(white, #ffcdd2);
+    }
+    .orange .content {
+      background: linear-gradient(white, #ffecb3);
+    }
+    .green .content {
+      background: linear-gradient(white, #c8e6c9);
+    }
+    .cyan .content {
+      background: linear-gradient(white, #b2ebf2);
+    }
+    .lime .content {
+      background: linear-gradient(white, #f0f4c3);
+    }
+    .pink .content {
+      background: linear-gradient(white, #f8bbd0);
+    }
 
 
 
@@ -201,7 +202,7 @@
     }
 
 
-	  paper-icon-button {
+    paper-icon-button {
         margin-left: 10px;
         display: block;
         width: 24px;
@@ -261,12 +262,14 @@
       }
 
       paper-textarea {
-      	--paper-input-container-focus-color: var(--paper-light-blue-500);
+        --paper-input-container-focus-color: var(--paper-light-blue-500);
       }
 
-	paper-checkbox {
+  paper-checkbox {
       --paper-checkbox-checked-color: var(--paper-light-blue-500);
-	}
+  }
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0”>
 
     </style>
 
@@ -274,134 +277,108 @@
   </head>
   <body>
 
-	<paper-header-panel class="blue">
+  <paper-header-panel class="blue">
         <div class="paper-header">Todo List</div>
-        <div id="main" class="content">
-		<paper-textarea label="Type new item"></paper-textarea>
-		<paper-button tabindex="0" raised class="colorful blue" onclick="addTask()">Add Item</paper-button>
-    	<div id="list">
-    	<span id="subList"></span>
-
-		<div class="list short">
-
-		<template id='a' is="dom-bind">
-
-
-			<template  is="dom-repeat" items="{{items}}">
-				<paper-icon-item>
-					<paper-checkbox item-icon checked="{{item.completed}}"></paper-checkbox>
-					<div class="flex" class="item-title" data-item-index$="{{index}}">{{item.title}}</div>
-					<form data-item-index$="{{index}}" onsubmit="return saveTask(event)">
-						<input class="item-edit" data-item-index$="{{index}}"/>
-					</form>
-					<paper-icon-button icon="create" class="orange" data-item-index$="{{index}}" onclick="editTask(event)"></paper-icon-button>
-			      	<paper-icon-button icon="delete" class="red" data-item-index$="{{index}}" onclick="deleteTask(event)"></paper-icon-button>
-			      	<paper-icon-button icon="done" class="blue" data-item-index$="{{index}}" onclick="saveTask(event)" style="display: none;"></paper-icon-button>
-		    	</paper-icon-item>
-			</template>
-
-		</template>
-
-		</div>
-    </div>
+        
+    
     </paper-header-panel>
 
-    <!-- <google-chart
-	  type='area'
-	  options='{"title": "Distribution of days in 2001Q1"}'
-	  cols='[{"label":"Month", "type":"string"}, {"label":"Days", "type":"number"}]'
-	  rows='[["Jan", 31],["Feb", 28],["Mar", 31]]'>
-	</google-chart> -->
-	
-   	
+    <div id="main" class="content">
+    <paper-textarea label="Type new item"></paper-textarea>
+    <paper-button tabindex="0" raised class="colorful blue" onclick="addTask()">Add Item</paper-button>
+      <div id="list">
+      <span id="subList"></span>
 
-	<script>
-		var items = [
-			{ title: 'Task text text 1', completed: true },
-			{ title: 'Task text text 2', completed: false },
-			{ title: 'Task text text 3', completed: true },
-			{ title: 'Task text text 4', completed: false }
-		];
+    <div class="list short">
 
-		var el = document.querySelector('#a');
-		console.log(el, items)
-		el.items = items;
-
-		function addTask() {
-			var val = $("paper-textarea").val();
-			if (val) {
-				$("paper-textarea").val('');
-				el.push("items", { title: val, completed: false });
-			};
-
-			return false;
-		}
-
-		function deleteTask(e) {
-			var pp = this.items.title;
-			console.log(pp);
-			var i = e.target.parentElement.getAttribute("data-item-index");
-			el.splice("items", parseInt(i), 1);
-
-			return false;
-
-		}
-
-		function editTask(e) {			
-			console.log("work");
-			//el.set();
-			var i = e.target.parentElement.getAttribute("data-item-index");
-			i = parseInt(i);
-			console.log(".item-title" + i);
-
-			var input = document.querySelector("input[data-item-index='" + i + "']");
-			input.style.display = 'block';
-
-			// var okBut = document.querySelector(".blue[data-item-index='" + i + "']");
-			// okBut.style.display = 'block';
-
-			var div = document.querySelector("div[data-item-index='" + i + "']");
-			div.style.display = 'none';
-
-			// var editBut = document.querySelector(".orange[data-item-index='" + i + "']");
-			// editBut.style.display = 'none';
-
-			// var deleteBut = document.querySelector(".red[data-item-index='" + i + "']");
-			// deleteBut.style.display = 'none';
-
-			// var deleteBut = document.querySelector("div[data-item-index='" + i + "']");
-			// div.style.display = 'none';
-
-			// div.innerHTML = "text";
+      <template id='a' is="dom-bind">
 
 
-			//$(".item-title" + i).hide();
-			//$('.edit_input').show();
+        <template  is="dom-repeat" items="{{items}}">
+          <paper-icon-item>
+            <paper-checkbox item-icon checked="{{item.completed}}"></paper-checkbox>
+            <div class="flex" class="item-title" data-item-index$="{{index}}">{{item.title}}</div>
+            <form data-item-index$="{{index}}" onsubmit="return saveTask(event)">
+              <input class="item-edit" data-item-index$="{{index}}"/>
+            </form>
+            <paper-icon-button icon="create" class="orange" data-item-index$="{{index}}" onclick="editTask(event)"></paper-icon-button>
+                <paper-icon-button icon="delete" class="red" data-item-index$="{{index}}" onclick="deleteTask(event)"></paper-icon-button>
+                <paper-icon-button icon="done" class="blue" data-item-index$="{{index}}" onclick="saveTask(event)" style="display: none;"></paper-icon-button>
+            </paper-icon-item>
+        </template>
 
-			// $('ul').on('click', '.edit_button', function() {
-		 //        saveTitle(i);
-		 //    });
+      </template>
+    </div>
+  </div>
 
-			//return false;
-		}
+  <script>
+    var items = [
+      { title: 'Task text text 1', completed: true },
+      { title: 'Task text text 2', completed: false },
+      { title: 'Task text text 3', completed: true },
+      { title: 'Task text text 4', completed: false }
+    ];
 
-		function saveTask(e) {
-			var i = e.target.getAttribute("data-item-index");
-			i = parseInt(i);
-			console.log(".item-title" + i);
+    var el = document.querySelector('#a');
+    console.log(el, items)
+    el.items = items;
 
-			var input = document.querySelector("input[data-item-index='" + i + "']");
-			var val = input.value;
-			input.style.display = 'none';
 
-			var div = document.querySelector("div[data-item-index='" + i + "']");
-			div.textContent = val;
-			div.style.display = 'block';
-			
-			return false;
-		}
-	</script>
-	
-	
+
+    function addTask() {
+      var val = $("paper-textarea").val();
+      if (val) {
+        $("paper-textarea").val('');
+        el.push("items", { title: val, completed: false });
+      };
+
+      return false;
+    }
+
+
+    function editTask(e) {      
+      console.log("work");
+      //el.set();
+      var i = e.target.parentElement.getAttribute("data-item-index");
+      i = parseInt(i);
+      console.log(".item-title" + i);
+
+      var input = document.querySelector("input[data-item-index='" + i + "']");
+      input.style.display = 'block';
+
+      var div = document.querySelector("div[data-item-index='" + i + "']");
+      div.style.display = 'none';
+
+      
+    }
+
+    function saveTask(e) {
+      var i = e.target.getAttribute("data-item-index");
+      i = parseInt(i);
+      console.log(".item-title" + i);
+
+      var input = document.querySelector("input[data-item-index='" + i + "']");
+      var val = input.value;
+      input.style.display = 'none';
+
+      var div = document.querySelector("div[data-item-index='" + i + "']");
+      div.textContent = val;
+      div.style.display = 'block';
+      
+      return false;
+    }
+
+    function deleteTask(e) {
+      var pp = this.items.title;
+      console.log(pp);
+      var i = e.target.parentElement.getAttribute("data-item-index");
+      el.splice("items", parseInt(i), 1);
+
+      return false;
+
+    }
+  </script>
+  
+  
   </body>
 </html>
