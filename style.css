@@ -12,5 +12,13 @@ body {
 	margin: 0 auto;
 	padding-top: 70px;
 	background-color: white; 
-
 }
+
+.item-edit {
+	display: none;
+}
+
+paper-button {
+	display: none;
+}
+
